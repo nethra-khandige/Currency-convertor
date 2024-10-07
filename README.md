@@ -2,13 +2,13 @@
 
 This is a simple Currency Converter website built using HTML, CSS, and JavaScript. The website fetches real-time conversion rates using the Currency API to provide accurate currency conversion between various currencies.
 
-##Features
+## Features
 Convert between a wide range of currencies.
 Fetches the latest conversion rates in real-time using the Currency API.
 Simple and user-friendly interface.
 Responsive design for both desktop and mobile.
 
-##Technologies Used
+## Technologies Used
 HTML: Structure of the webpage.
 CSS: Styling and layout of the webpage.
 JavaScript: Handles the conversion logic and API integration.
