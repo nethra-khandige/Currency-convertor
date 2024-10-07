@@ -22,5 +22,7 @@ Currency API: Provides the real-time conversion rates.
 
 ## How It Works 🪜🪜
 User Input: The user selects the currencies (from and to) and enters the amount to be converted.
+
 API Request: The website sends a request to the Currency API to retrieve the latest conversion rates.
+
 Real-Time Conversion: The conversion result is displayed based on the rates fetched from the API.
