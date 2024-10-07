@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Currency List 📑</title>
+        <link rel="stylesheet" href="styleOriginal.css"/>
+        <style>
+          @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Playpen+Sans:wght@100..800&display=swap");
+        </style>
+      </head>
+    
+<body>
+    <nav>
+        <!-- <div class="logo">MyCurrencyConvertor</div> -->
+        <div class="logo">
+            <img src="currency.png" alt="Alternate text" width="50px">
+           </div>
+        <ul>
+          <li><a href="index3.html">Home</a></li>
+          <li><a href="aboutUs.html">About Us</a></li>
+        </ul>
+      </nav>
+    <div class="container">
+    <h1>Currency Abbreviations Table   <img src="table (1).png" alt="table" width="50px"></h1>
+    <br>
+    <table id="currencyTable">
+        <thead>
+            <tr>
+                <th>Country/Currency</th>
+                <th>Acronym/Abbreviation</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Rows will be added dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        // Data Array
+        const currencies = [
+            { country: "Australia Dollar", abbrev: "AUD" },
+            { country: "Great Britain Pound", abbrev: "GBP" },
+            { country: "Euro", abbrev: "EUR" },
+            { country: "Japan Yen", abbrev: "JPY" },
+            { country: "Switzerland Franc", abbrev: "CHF" },
+            { country: "USA Dollar", abbrev: "USD" },
+            { country: "Afghanistan Afghani", abbrev: "AFN" },
+            { country: "Albania Lek", abbrev: "ALL" },
+            { country: "Algeria Dinar", abbrev: "DZD" },
+            { country: "Angola Kwanza", abbrev: "AOA" },
+            { country: "Argentina Peso", abbrev: "ARS" },
+            { country: "Armenia Dram", abbrev: "AMD" },
+            { country: "Aruba Florin", abbrev: "AWG" },
+            { country: "Australia Dollar", abbrev: "AUD" },
+            { country: "Austria Schilling", abbrev: "ATS (EURO)" },
+            { country: "Belgium Franc", abbrev: "BEF (EURO)" },
+            { country: "Azerbaijan New Manat", abbrev: "AZN" },
+            { country: "Bahamas Dollar", abbrev: "BSD" },
+            { country: "Bahrain Dinar", abbrev: "BHD" },
+            { country: "Bangladesh Taka", abbrev: "BDT" },
+            { country: "Barbados Dollar", abbrev: "BBD" },
+            { country: "Belarus Ruble", abbrev: "BYR" },
+            { country: "Belize Dollar", abbrev: "BZD" },
+            { country: "Bermuda Dollar", abbrev: "BMD" },
+            { country: "Bhutan Ngultrum", abbrev: "BTN" },
+            { country: "Bolivia Boliviano", abbrev: "BOB" },
+            { country: "Bosnia Mark", abbrev: "BAM" },
+            { country: "Botswana Pula", abbrev: "BWP" },
+            { country: "Brazil Real", abbrev: "BRL" },
+            { country: "Great Britain Pound", abbrev: "GBP" },
+            { country: "Brunei Dollar", abbrev: "BND" },
+            { country: "Bulgaria Lev", abbrev: "BGN" },
+            { country: "Burundi Franc", abbrev: "BIF" },
+            { country: "CFA Franc BCEAO", abbrev: "XOF" },
+            { country: "CFA Franc BEAC", abbrev: "XAF" },
+            { country: "CFP Franc", abbrev: "XPF" },
+            { country: "Cambodia Riel", abbrev: "KHR" },
+            { country: "Canada Dollar", abbrev: "CAD" },
+            { country: "Cape Verde Escudo", abbrev: "CVE" },
+            { country: "Cayman Islands Dollar", abbrev: "KYD" },
+            { country: "Chili Peso", abbrev: "CLP" },
+            { country: "China Yuan/Renminbi", abbrev: "CNY" },
+            { country: "Colombia Peso", abbrev: "COP" },
+            { country: "Comoros Franc", abbrev: "KMF" },
+            { country: "Congo Franc", abbrev: "CDF" },
+            { country: "Costa Rica Colon", abbrev: "CRC" },
+            { country: "Croatia Kuna", abbrev: "HRK" },
+            { country: "Cuba Convertible Peso", abbrev: "CUC" },
+            { country: "Cuba Peso", abbrev: "CUP" },
+            { country: "Cyprus Pound", abbrev: "CYP (EURO)" },
+            { country: "Czech Koruna", abbrev: "CZK" },
+            { country: "Denmark Krone", abbrev: "DKK" },
+            { country: "Djibouti Franc", abbrev: "DJF" },
+            { country: "Dominican Republic Peso", abbrev: "DOP" },
+            { country: "East Caribbean Dollar", abbrev: "XCD" },
+            { country: "Egypt Pound", abbrev: "EGP" },
+            { country: "El Salvador Colon", abbrev: "SVC" },
+            { country: "Estonia Kroon", abbrev: "EEK (EURO)" },
+            { country: "Ethiopia Birr", abbrev: "ETB" },
+            { country: "Euro", abbrev: "EUR" },
+            { country: "Falkland Islands Pound", abbrev: "FKP" },
+            { country: "Finland Markka", abbrev: "FIM (EURO)" },
+            { country: "Fiji Dollar", abbrev: "FJD" },
+            { country: "Gambia Dalasi", abbrev: "GMD" },
+            { country: "Georgia Lari", abbrev: "GEL" },
+            { country: "Germany Mark", abbrev: "DMK (EURO)" },
+            { country: "Ghana New Cedi", abbrev: "GHS" },
+            { country: "Gibraltar Pound", abbrev: "GIP" },
+            { country: "Greece Drachma", abbrev: "GRD (EURO)" },
+            { country: "Guatemala Quetzal", abbrev: "GTQ" },
+            { country: "Guinea Franc", abbrev: "GNF" },
+            { country: "Guyana Dollar", abbrev: "GYD" },
+            { country: "Haiti Gourde", abbrev: "HTG" },
+            { country: "Honduras Lempira", abbrev: "HNL" },
+            { country: "Hong Kong Dollar", abbrev: "HKD" },
+            { country: "Hungary Forint", abbrev: "HUF" },
+            { country: "Iceland Krona", abbrev: "ISK" },
+            { country: "India Rupee", abbrev: "INR" },
+            { country: "Indonesia Rupiah", abbrev: "IDR" },
+            { country: "Iran Rial", abbrev: "IRR" },
+            { country: "Iraq Dinar", abbrev: "IQD" },
+            { country: "Ireland Pound", abbrev: "IED (EURO)" },
+            { country: "Israel New Shekel", abbrev: "ILS" },
+            { country: "Italy Lira", abbrev: "ITL (EURO)" },
+            { country: "Jamaica Dollar", abbrev: "JMD" },
+            { country: "Japan Yen", abbrev: "JPY" },
+            { country: "Jordan Dinar", abbrev: "JOD" },
+            { country: "Kazakhstan Tenge", abbrev: "KZT" },
+            { country: "Kenya Shilling", abbrev: "KES" },
+            { country: "Kuwait Dinar", abbrev: "KWD" },
+            { country: "Kyrgyzstan Som", abbrev: "KGS" },
+            { country: "Laos Kip", abbrev: "LAK" },
+            { country: "Latvia Lats", abbrev: "LVL (EURO)" },
+            { country: "Lebanon Pound", abbrev: "LBP" },
+            { country: "Lesotho Loti", abbrev: "LSL" },
+            { country: "Liberia Dollar", abbrev: "LRD" },
+            { country: "Libya Dinar", abbrev: "LYD" },
+            { country: "Lithuania Litas", abbrev: "LTL (EURO)" },
+            { country: "Luxembourg Franc", abbrev: "LUF (EURO)" },
+            { country: "Macau Pataca", abbrev: "MOP" },
+            { country: "Macedonia Denar", abbrev: "MKD" },
+            { country: "Malagasy Ariary", abbrev: "MGA" },
+            { country: "Malawi Kwacha", abbrev: "MWK" },
+            { country: "Malaysia Ringgit", abbrev: "MYR" },
+            { country: "Maldives Rufiyaa", abbrev: "MVR" },
+            { country: "Malta Lira", abbrev: "MTL (EURO)" },
+            { country: "Mauritania Ouguiya", abbrev: "MRO" },
+            { country: "Mauritius Rupee", abbrev: "MUR" },
+            { country: "Mexico Peso", abbrev: "MXN" },
+            { country: "Moldova Leu", abbrev: "MDL" },
+            { country: "Mongolia Tugrik", abbrev: "MNT" },
+            { country: "Morocco Dirham", abbrev: "MAD" },
+            { country: "Mozambique New Metical", abbrev: "MZN" },
+            { country: "Myanmar Kyat", abbrev: "MMK" },
+            { country: "NL Antilles Guilder", abbrev: "ANG" },
+            { country: "Namibia Dollar", abbrev: "NAD" },
+            { country: "Nepal Rupee", abbrev: "NPR" },
+            { country: "Netherlands Guilder", abbrev: "NLG (EURO)" },
+            { country: "New Zealand Dollar", abbrev: "NZD" },
+            { country: "Nicaragua Cordoba Oro", abbrev: "NIO" },
+            { country: "Nigeria Naira", abbrev: "NGN" },
+            { country: "North Korea Won", abbrev: "KPW" },
+            { country: "Norway Kroner", abbrev: "NOK" },
+            { country: "Oman Rial", abbrev: "OMR" },
+            { country: "Pakistan Rupee", abbrev: "PKR" },
+            { country: "Panama Balboa", abbrev: "PAB" },
+            { country: "Papua New Guinea Kina", abbrev: "PGK" },
+            { country: "Paraguay Guarani", abbrev: "PYG" },
+            { country: "Peru Nuevo Sol", abbrev: "PEN" },
+            { country: "Philippines Peso", abbrev: "PHP" },
+            { country: "Poland Zloty", abbrev: "PLN" },
+            { country: "Portugal Escudo", abbrev: "PTE (EURO)" },
+            { country: "Qatar Rial", abbrev: "QAR" },
+            { country: "Romania New Lei", abbrev: "RON" },
+            { country: "Russia Rouble", abbrev: "RUB" },
+            { country: "Rwanda Franc", abbrev: "RWF" },
+            { country: "Samoa Tala", abbrev: "WST" },
+            { country: "Sao Tome/Principe Dobra", abbrev: "STD" },
+            { country: "Saudi Arabia Riyal", abbrev: "SAR" },
+            { country: "Serbia Dinar", abbrev: "RSD" },
+            { country: "Seychelles Rupee", abbrev: "SCR" },
+            { country: "Sierra Leone Leone", abbrev: "SLL" },
+            { country: "Singapore Dollar", abbrev: "SGD" },
+            { country: "Slovakia Koruna", abbrev: "SKK (EURO)" },
+            { country: "Slovenia Tolar", abbrev: "SIT (EURO)" },
+            { country: "Solomon Islands Dollar", abbrev: "SBD" },
+            { country: "Somali Shilling", abbrev: "SOS" },
+            { country: "South Africa Rand", abbrev: "ZAR" },
+            { country: "South Korea Won", abbrev: "KRW" },
+            { country: "Spain Peseta", abbrev: "ESP (EURO)" },
+            { country: "Sri Lanka Rupee", abbrev: "LKR" },
+            { country: "St Helena Pound", abbrev: "SHP" },
+            { country: "Sudan Pound", abbrev: "SDG" },
+            { country: "Suriname Dollar", abbrev: "SRD" },
+            { country: "Swaziland Lilangeni", abbrev: "SZL" },
+            { country: "Sweden Krona", abbrev: "SEK" },
+            { country: "Switzerland Franc", abbrev: "CHF" },
+            { country: "Syria Pound", abbrev: "SYP" },
+            { country: "Taiwan Dollar", abbrev: "TWD" },
+            { country: "Tanzania Shilling", abbrev: "TZS" },
+            { country: "Thailand Baht", abbrev: "THB" },
+            { country: "Tonga Pa'anga", abbrev: "TOP" },
+            { country: "Trinidad/Tobago Dollar", abbrev: "TTD" },
+            { country: "Tunisia Dinar", abbrev: "TND" },
+            { country: "Turkish New Lira", abbrev: "TRY" },
+            { country: "Turkmenistan Manat", abbrev: "TMM" },
+            { country: "USA Dollar", abbrev: "USD" },
+            { country: "Uganda Shilling", abbrev: "UGX" },
+            { country: "Ukraine Hryvnia", abbrev: "UAH" },
+            { country: "Uruguay Peso", abbrev: "UYU" },
+            { country: "United Arab Emirates Dirham", abbrev: "AED" },
+            { country: "Vanuatu Vatu", abbrev: "VUV" },
+            { country: "Venezuela Bolivar", abbrev: "VEB" },
+            { country: "Vietnam Dong", abbrev: "VND" },
+            { country: "Yemen Rial", abbrev: "YER" },
+            { country: "Zambia Kwacha", abbrev: "ZMK" },
+            { country: "Zimbabwe Dollar", abbrev: "ZWD" }
+        ];
+
+        // Add rows to table dynamically
+        const tableBody = document.getElementById("tableBody");
+        currencies.forEach(currency => {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td>${currency.country}</td><td>${currency.abbrev}</td>`;
+            tableBody.appendChild(row);
+        });
+    </script>
+</div>
+<footer class="footer">Copyright &copy; All rights reserved
+    <p>Email: abc@gmail.com</p>
+    <p>Phone no: 1234567809</p>
+  </footer>
+</body>
+</html>

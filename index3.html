@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💵 Currency Convertor</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Playpen+Sans:wght@100..800&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
+    </style>
+  </head>
+  <body>
+    <nav>
+      <!-- <div class="logo">MyCurrencyConvertor</div> -->
+       <div class="logo">
+        <img src="currency.png" alt="Alternate text" width="50px">
+       </div>
+      <ul>
+        <li><a href="index3.html">Home</a></li>
+        <li><a href="aboutUs.html">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="container" background="world.png">
+      <h1>Welcome to currrency convertor!💰💱</h1>
+      <form>
+        <br>
+        <h3>Please <a class="clst" href="currencyList.html">click here for currencies and their abbreviations</a> and enter the abbreviations </h3>
+        <label for="currency">Enter your base currency:</label>
+        <input type="text" id="currency" name="currency" placeholder="Example: INR" maxlength="3" style="text-transform: uppercase;" required>
+        <!-- <a class="clst" href="/currencyList.html">Click here for currencies and their Abbreviations</a> -->
+        
+        <label for="quantity">Enter the denomination:</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="100" required />
+        
+        <label for="convertCurrency">Enter your required currency:</label>
+        <input type="text" id="convertCurrency" name="convertCurrency" placeholder="Example: USD" maxlength="3" style="text-transform: uppercase;" required>
+        
+        <button class="btn" type="submit">Submit</button>
+        <!-- <button class="btn-77" type="submit">Submit</button> -->
+        <!-- <a class="clst" href="/currencyList.html">Click here for more info</a> -->
+
+      
+
+
+        <div class="output">
+            <h2> Here is your value in your desired currency! 😁</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Currency</th>
+                        <th>Currency code</th>
+                        <th>Value</th>
+                        <th>Rounded Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </div>
+
+      </form>
+    </div>
+    <footer class="footer">Copyright &copy; All rights reserved
+      <p>Email: abc@gmail.com</p>
+      <p>Phone no: 1234567809</p>
+    </footer>
+    <script src="main3.js"></script>
+  </body>
+</html>

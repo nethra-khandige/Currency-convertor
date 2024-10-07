@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; /* Space between nav, content, and footer */
+    min-height: 100vh; /* Full height of the viewport */
+    background: rgb(71, 37, 4); /* Gradient background */
+  }
+  
+  nav {
+    position: fixed; /* Fix the navbar to the top */
+    top: 0;
+    left: 0;
+    right: 0; /* Ensure it stretches full width */
+    font-family: "Playpen Sans", cursive;
+    font-weight: 800;
+    display: flex;
+    font-size: larger;
+    background-color: rgb(28, 8, 100);
+    padding: 10px;
+    color: rgb(180, 216, 241);
+    z-index: 1000; /* Ensure it stays above other elements */
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  nav ul li {
+    list-style: none;
+    margin: 0 30px;
+  }
+  
+  nav li a {
+    text-decoration: none;
+    color: rgb(180, 216, 241);
+    transition: all 500ms; /* Transition for hover */
+  }
+  
+  nav li a:hover {
+    color: rgb(189, 21, 133);
+  }
+  
+  .container {
+    padding: 50px; /* Space inside the box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 900px; /* Width of the box */
+    margin: 80px auto; /* Center horizontally with top margin for navbar */
+    background-image: url('bg3.jpg'); /* Set your image path here */
+    background-size: cover; /* Ensure the background covers the entire navbar */
+    background-position: center; /* Center the background image */
+    font-family: "Playwrite DE Grund", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 21px;
+    font-style: normal;
+  }
+  
+  .container h1 {
+    text-align: center;
+    color: rgb(21, 16, 16);
+  }
+  .container p{
+    font-size: 30px;
+  }
+  
+
+  .container a.clst:hover {
+    text-decoration: none;
+    color: rgb(56, 38, 179);
+  }
+  
+
+
+  
+  .footer {
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+    padding: 20px; /* Add some padding for the footer */
+    background-color: rgb(28, 8, 100); /* Background color for footer */
+    color: rgb(180, 216, 241); /* Text color */
+  }
+  
+  @media (max-width: 600px) {
+    body {
+      font-size: 18px;
+    }
+  }
+  
